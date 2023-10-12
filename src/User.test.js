@@ -25,9 +25,9 @@ test('data is submitted', () => {
     const registerButton = getByText('Register');
     
     //Fikk hjelp av dette for det under: https://stackoverflow.com/questions/63807689/fireevent-change-does-not-input-value
-    fireEvent.change(usernameInput, { target: { value: 'testuser' } });
-    fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
-    fireEvent.change(passwordInput, { target: { value: 'password123' } });
+    fireEvent.change(usernameInput, { target: { value: 'test' } });
+    fireEvent.change(emailInput, { target: { value: 'test@gmail.com' } });
+    fireEvent.change(passwordInput, { target: { value: 'password' } });
     fireEvent.click(registerButton);
 });
 
