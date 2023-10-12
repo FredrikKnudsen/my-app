@@ -11,8 +11,7 @@ test('increase count when button is clicked', () => {
     const {getByText} = render(<Counter />);
     const increaseNumberButton = getByText('Increase');
     fireEvent.click(increaseNumberButton);
-
-    
+      
     const increasedCount = getByText('Counter: 1')
     expect(increasedCount).toBeInTheDocument;
 })
