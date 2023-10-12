@@ -29,4 +29,18 @@ test('data is submitted', () => {
     fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
     fireEvent.change(passwordInput, { target: { value: 'password123' } });
     fireEvent.click(registerButton);
-})
+});
+
+test('validates required fields and shows errors', () => {
+    const { getByText } = render(<UserCreation />);
+    const registerButton = getByText('Register');
+    fireEvent.click(registerButton);
+
+    const usernameError = getByText('Username is required.');
+    const emailError = getByText('Email is required.');
+    const passwordError = getByText('Password is required.');
+
+    expect(usernameError).toBeInTheDocument();
+    expect(emailError).toBeInTheDocument();
+    expect(passwordError).toBeInTheDocument();
+});
