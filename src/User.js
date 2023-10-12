@@ -1,3 +1,5 @@
+// Brukte ting herfra https://www.w3schools.com/react/react_forms.asp
+
 import { useState } from 'react';
 
 const UserCreation = () => {
@@ -17,7 +19,6 @@ const UserCreation = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Perform client-side validation
     const validationErrors = {};
     if (!user.username) {
       validationErrors.username = 'Username is required.';
@@ -29,12 +30,6 @@ const UserCreation = () => {
       validationErrors.password = 'Password is required.';
     }
     setErrors(validationErrors);
-
-    // If no validation errors, submit the user data
-    if (Object.keys(validationErrors).length === 0) {
-      // Simulate sending the user data to a server
-      console.log('User data submitted:', user);
-    }
   };
 
   return (
