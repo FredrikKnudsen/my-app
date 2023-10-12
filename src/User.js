@@ -8,13 +8,15 @@ const UserCreation = () => {
     });
 
     const handleChange = (e) => {
-
-    }
+        const {name, value} = e.target;
+        setUser({...user, [name]: value, });
+    };
 
     const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('User Created:', user);
+    };
 
-    }
-    
     return (
         <div>
             <h1>User Creation</h1>
